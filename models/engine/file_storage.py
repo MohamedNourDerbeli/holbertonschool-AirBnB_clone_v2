@@ -66,8 +66,9 @@ class FileStorage:
         if obj is None:
             pass
         else:
-            del self.all()[type(obj).__name__ + "." + str(obj.id)]
-            self.save()
+            if type(obj).__name__ + "." + str(obj.id) in self.all():
+                del self.all()[type(obj).__name__ + "." + str(obj.id)]
+                self.save()
 
     def close(self):
         pass
