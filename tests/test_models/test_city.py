@@ -154,14 +154,14 @@ class TestCity(unittest.TestCase):
         self.assertIn("'id': '{}'".format(self.city.id), s)
         self.assertIn(
             "'created_at': \
-            {}".format(
+{}".format(
                 repr(self.city.created_at)
             ),
             s,
         )
         self.assertIn(
             "'updated_at': \
-            {}".format(
+{}".format(
                 repr(self.city.updated_at)
             ),
             s,
@@ -212,9 +212,9 @@ class TestCity(unittest.TestCase):
         self.assertEqual(self.city.id, city_dict["id"])
         self.assertEqual("City", city_dict["__class__"])
         self.assertEqual(self.city.created_at.isoformat(), city_dict["created\
-            _at"])
+_at"])
         self.assertEqual(self.city.updated_at.isoformat(), city_dict["updated\
-            _at"])
+_at"])
         self.assertEqual(self.city.name, city_dict["name"])
         self.assertEqual(self.city.state_id, city_dict["state_id"])
 
