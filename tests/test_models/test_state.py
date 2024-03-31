@@ -129,14 +129,14 @@ class TestState(unittest.TestCase):
         self.assertIn("'id': '{}'".format(self.state.id), s)
         self.assertIn(
             "'created_at': \
-            {}".format(
+{}".format(
                 repr(self.state.created_at)
             ),
             s,
         )
         self.assertIn(
             "'updated_at': \
-            {}".format(
+{}".format(
                 repr(self.state.updated_at)
             ),
             s,
@@ -159,7 +159,7 @@ class TestState(unittest.TestCase):
     @unittest.skipIf(
         type(models.storage) == FileStorage,
         "Testing \
-        FileStorage",
+FileStorage",
     )
     def test_save_dbstorage(self):
         """Test save method with DBStorage."""
@@ -191,15 +191,13 @@ class TestState(unittest.TestCase):
         self.assertEqual(
             self.state.created_at.isoformat(),
             state_dict[
-                "\
-            created_at"
+                "created_at"
             ],
         )
         self.assertEqual(
             self.state.updated_at.isoformat(),
             state_dict[
-                "\
-            updated_at"
+                "updated_at"
             ],
         )
         self.assertEqual(self.state.name, state_dict["name"])
