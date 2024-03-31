@@ -40,9 +40,9 @@ class TestPlace(unittest.TestCase):
         cls.city = City(name="San Francisco", state_id=cls.state.id)
         cls.user = User(email="poppy@holberton.com", password="betty98")
         cls.place = Place(city_id=cls.city.id, user_id=cls.user.id, name="B\
-            etty")
+etty")
         cls.review = Review(text="stel\
-            lar", place_id=cls.place.id, user_id=cls.user.id)
+lar", place_id=cls.place.id, user_id=cls.user.id)
         cls.amenity = Amenity(name="water", place=cls.place.id)
         cls.filestorage = FileStorage()
 
@@ -106,7 +106,7 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(hasattr(us, "longitude"))
 
     @unittest.skipIf(type(models.storage) == FileStorage, "Testing \
-        FileStorage")
+FileStorage")
     def test_nullable_attributes(self):
         """Test that email attribute is non-nullable."""
         with self.assertRaises(OperationalError):
@@ -175,9 +175,9 @@ class TestPlace(unittest.TestCase):
         self.assertIn("[Place] ({})".format(self.place.id), s)
         self.assertIn("'id': '{}'".format(self.place.id), s)
         self.assertIn("'created_at': \
-            {}".format(repr(self.place.created_at)), s)
+{}".format(repr(self.place.created_at)), s)
         self.assertIn("'updated_at': \
-            {}".format(repr(self.place.updated_at)), s)
+{}".format(repr(self.place.updated_at)), s)
         self.assertIn("'city_id': '{}'".format(self.place.city_id), s)
         self.assertIn("'user_id': '{}'".format(self.place.user_id), s)
         self.assertIn("'name': '{}'".format(self.place.name), s)
@@ -224,9 +224,9 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(self.place.id, place_dict["id"])
         self.assertEqual("Place", place_dict["__class__"])
         self.assertEqual(self.place.created_at.isoformat(), place_dict["\
-            created_at"])
+created_at"])
         self.assertEqual(self.place.updated_at.isoformat(), place_dict["\
-            updated_at"])
+updated_at"])
         self.assertEqual(self.place.city_id, place_dict["city_id"])
         self.assertEqual(self.place.user_id, place_dict["user_id"])
         self.assertEqual(self.place.name, place_dict["name"])
