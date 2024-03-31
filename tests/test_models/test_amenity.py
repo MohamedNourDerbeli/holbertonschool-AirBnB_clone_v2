@@ -121,14 +121,14 @@ class TestAmenity(unittest.TestCase):
         self.assertIn("'id': '{}'".format(self.amenity.id), s)
         self.assertIn(
             "'created_at': \
-            {}".format(
+{}".format(
                 repr(self.amenity.created_at)
             ),
             s,
         )
         self.assertIn(
             "'updated_at': \
-            {}".format(
+{}".format(
                 repr(self.amenity.updated_at)
             ),
             s,
