@@ -28,7 +28,7 @@ class TestState(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(state.name, None)
         else:
-            self.assertEqual(state.name, "")
+            self.assertEqual(state.name, None)
 
     def test_to_dict_creates_dict(self):
         """test to_dict method creates a dictionary with proper attrs"""

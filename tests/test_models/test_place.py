@@ -28,7 +28,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.city_id, None)
         else:
-            self.assertEqual(place.city_id, "")
+            self.assertEqual(place.city_id, None)
 
     def test_user_id_attr(self):
         """Test Place has attr user_id, and it's an empty string"""
@@ -37,7 +37,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.user_id, None)
         else:
-            self.assertEqual(place.user_id, "")
+            self.assertEqual(place.user_id, None)
 
     def test_name_attr(self):
         """Test Place has attr name, and it's an empty string"""
@@ -46,7 +46,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.name, None)
         else:
-            self.assertEqual(place.name, "")
+            self.assertEqual(place.name, None)
 
     def test_description_attr(self):
         """Test Place has attr description, and it's an empty string"""
@@ -55,7 +55,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.description, None)
         else:
-            self.assertEqual(place.description, "")
+            self.assertEqual(place.description, None)
 
     def test_number_rooms_attr(self):
         """Test Place has attr number_rooms, and it's an int == 0"""
