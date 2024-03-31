@@ -28,7 +28,7 @@ class TestUser(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(user.email, None)
         else:
-            self.assertEqual(user.email, "")
+            self.assertEqual(user.email, None)
 
     def test_password_attr(self):
         """Test that User has attr password, and it's an empty string"""
@@ -37,7 +37,7 @@ class TestUser(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(user.password, None)
         else:
-            self.assertEqual(user.password, "")
+            self.assertEqual(user.password, None)
 
     def test_first_name_attr(self):
         """Test that User has attr first_name, and it's an empty string"""
@@ -46,7 +46,7 @@ class TestUser(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(user.first_name, None)
         else:
-            self.assertEqual(user.first_name, "")
+            self.assertEqual(user.first_name, None)
 
     def test_last_name_attr(self):
         """Test that User has attr last_name, and it's an empty string"""
@@ -55,7 +55,7 @@ class TestUser(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(user.last_name, None)
         else:
-            self.assertEqual(user.last_name, "")
+            self.assertEqual(user.last_name, None)
 
     def test_to_dict_creates_dict(self):
         """test to_dict method creates a dictionary with proper attrs"""
@@ -64,7 +64,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(new_d), dict)
         self.assertFalse("_sa_instance_state" in new_d)
         for attr in u.__dict__:
-            if attr is not "_sa_instance_state":
+            if attr != "_sa_instance_state":
                 self.assertTrue(attr in new_d)
         self.assertTrue("__class__" in new_d)
 
