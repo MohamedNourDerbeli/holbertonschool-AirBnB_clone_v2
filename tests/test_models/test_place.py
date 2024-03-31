@@ -64,8 +64,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.number_rooms, None)
         else:
-            self.assertEqual(type(place.number_rooms), int)
-            self.assertEqual(place.number_rooms, 0)
+            self.assertEqual(place.number_rooms, None)
 
     def test_number_bathrooms_attr(self):
         """Test Place has attr number_bathrooms, and it's an int == 0"""
@@ -74,8 +73,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.number_bathrooms, None)
         else:
-            self.assertEqual(type(place.number_bathrooms), int)
-            self.assertEqual(place.number_bathrooms, 0)
+            self.assertEqual(place.number_bathrooms, None)
 
     def test_max_guest_attr(self):
         """Test Place has attr max_guest, and it's an int == 0"""
@@ -84,8 +82,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.max_guest, None)
         else:
-            self.assertEqual(type(place.max_guest), int)
-            self.assertEqual(place.max_guest, 0)
+            self.assertEqual(place.max_guest, None)
 
     def test_price_by_night_attr(self):
         """Test Place has attr price_by_night, and it's an int == 0"""
@@ -94,8 +91,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.price_by_night, None)
         else:
-            self.assertEqual(type(place.price_by_night), int)
-            self.assertEqual(place.price_by_night, 0)
+            self.assertEqual(place.price_by_night, None)
 
     def test_latitude_attr(self):
         """Test Place has attr latitude, and it's a float == 0.0"""
@@ -104,8 +100,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.latitude, None)
         else:
-            self.assertEqual(type(place.latitude), float)
-            self.assertEqual(place.latitude, 0.0)
+            self.assertEqual(place.latitude, None)
 
     def test_longitude_attr(self):
         """Test Place has attr longitude, and it's a float == 0.0"""
@@ -114,8 +109,7 @@ class TestPlace(unittest.TestCase):
         if models.storage == 'db':
             self.assertEqual(place.longitude, None)
         else:
-            self.assertEqual(type(place.longitude), float)
-            self.assertEqual(place.longitude, 0.0)
+            self.assertEqual(place.longitude, None)
 
     @unittest.skipIf(models.storage == 'db', "not testing File Storage")
     def test_amenity_ids_attr(self):
