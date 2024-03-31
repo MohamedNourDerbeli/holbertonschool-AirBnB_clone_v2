@@ -124,9 +124,9 @@ class TestUser(unittest.TestCase):
         self.assertIn("[User] ({})".format(self.user.id), s)
         self.assertIn("'id': '{}'".format(self.user.id), s)
         self.assertIn("'created_at': \
-            {}".format(repr(self.user.created_at)), s)
+{}".format(repr(self.user.created_at)), s)
         self.assertIn("'updated_at': \
-            {}".format(repr(self.user.updated_at)), s)
+{}".format(repr(self.user.updated_at)), s)
         self.assertIn("'email': '{}'".format(self.user.email), s)
         self.assertIn("'password': '{}'".format(self.user.password), s)
 
@@ -170,9 +170,9 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.user.id, user_dict["id"])
         self.assertEqual("User", user_dict["__class__"])
         self.assertEqual(self.user.created_at.isoformat(), user_dict["\
-            created_at"])
+created_at"])
         self.assertEqual(self.user.updated_at.isoformat(), user_dict["\
-            updated_at"])
+updated_at"])
         self.assertEqual(self.user.email, user_dict["email"])
         self.assertEqual(self.user.password, user_dict["password"])
 
