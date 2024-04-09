@@ -9,6 +9,8 @@ app = Flask(__name__)
 def cities_by_states():
     """Returns the list of all cities in the database."""
     states = sorted(storage.all("State").values(), key=lambda s: s.name)
+    for state in states:
+        state.cities = sorted(state.cities, key=lambda c: c.name)
     return render_template("8-cities_by_states.html", states=states)
 
 
