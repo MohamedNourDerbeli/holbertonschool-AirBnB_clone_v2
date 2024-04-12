@@ -11,10 +11,16 @@ def hbnb_filters():
     """Returns the list of all cities in the database."""
     states = sorted(storage.all("State").values(), key=lambda s: s.name)
     amenity = sorted(storage.all("Amenity").values(), key=lambda s: s.name)
-    places =  sorted(storage.all("Place").values(), key=lambda s: s.name)
+    places = sorted(storage.all("Place").values(), key=lambda s: s.name)
     for state in states:
         state.cities = sorted(state.cities, key=lambda c: c.name)
-    return render_template("100-hbnb.html", states=states, amenity=amenity, places=places)
+    return render_template(
+        "100-hbnb.html\
+",
+        states=states,
+        amenity=amenity,
+        places=places,
+    )
 
 
 @app.teardown_appcontext

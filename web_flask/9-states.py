@@ -13,8 +13,8 @@ def states(id):
     states = sorted(storage.all("State").values(), key=lambda s: s.name)
     for state in states:
         state.cities = sorted(state.cities, key=lambda c: c.name)
-    if  id is not None:
-        id = 'State.' + id
+    if id is not None:
+        id = "State." + id
         states = storage.all("State")
 
     return render_template("9-states.html", states=states, id=id)

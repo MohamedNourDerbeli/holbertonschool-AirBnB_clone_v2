@@ -13,7 +13,12 @@ def hbnb_filters():
     amenity = sorted(storage.all("Amenity").values(), key=lambda s: s.name)
     for state in states:
         state.cities = sorted(state.cities, key=lambda c: c.name)
-    return render_template("10-hbnb_filters.html", states=states, amenity=amenity)
+    return render_template(
+        "10-hbnb_filters.html\
+",
+        states=states,
+        amenity=amenity,
+    )
 
 
 @app.teardown_appcontext
