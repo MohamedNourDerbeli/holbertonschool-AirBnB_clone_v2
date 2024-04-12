@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 from flask import Flask, render_template
 from models import storage
 
-# Create a Flask application instance
+"""Create a Flask application instance"""
 app = Flask(__name__)
 
 
