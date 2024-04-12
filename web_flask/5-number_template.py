@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""Create a Flask application instance"""
 from flask import Flask
 from flask import render_template
 
-"""Create a Flask application instance"""
 
 app = Flask(__name__)
 
