@@ -1,6 +1,7 @@
+#!/usr/bin/python3
+"""Create a Flask application instance"""
 from flask import Flask
 
-# Create a Flask application instance
 app = Flask(__name__)
 
 
