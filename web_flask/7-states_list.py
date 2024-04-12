@@ -11,8 +11,6 @@ app = Flask(__name__)
 def states_list():
     """Returns the list of all States in the database."""
     states = sorted(storage.all("State").values(), key=lambda s: s.name)
-    for state in states:
-        state.cities = sorted(state.cities, key=lambda c: c.name)
     return render_template("7-states_list.html", states=states)
 
 
