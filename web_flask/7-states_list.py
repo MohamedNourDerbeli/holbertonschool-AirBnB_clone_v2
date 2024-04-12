@@ -15,8 +15,8 @@ def states_list():
 
 
 @app.teardown_appcontext
-def close(self):
-    """Closes the database session."""
+def teardown_db(exception):
+    """closes the storage on teardown"""
     storage.close()
 
 
